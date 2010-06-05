@@ -4,7 +4,7 @@ AS3 Layout Manager
 About
 -----
 
-LayoutManager is a simple way to align and distribute displayObjects.
+LayoutManager is a simple way to align and distribute display objects.
 Use the place method with an <code>Align</code> and <code>arr</code> parameters.
 
 
@@ -24,13 +24,17 @@ Basic usage (Using the "place" global function, which acts as an static instance
 	// will place sp2 by the right side of sp1 using the sp1.x + sp1.width as reference..
 
 
-You can use also a Stage instance as a reference:
+You can also use a Stage instance as a reference:
 	place(Align.CENTER,[stage, sp])
 	// will put the sp in the center of the stage. Be careful with object with read only properties.
 
 
 Available alignment and distribution options are:
-DISTRIBUTE_RIGHT, DISTRIBUTE_LEFT, DISTRIBUTE_UP, DISTRIBUTE_DOWN, RIGHT, LEFT, TOP, BOTTOM, CENTER, CENTER_HORIZONTAL, CENTER_VERTICAL and GRID 			
+
+* DISTRIBUTE_RIGHT, DISTRIBUTE_LEFT, DISTRIBUTE_UP & DISTRIBUTE_DOWN
+* RIGHT, LEFT, TOP & BOTTOM
+* CENTER, CENTER_HORIZONTAL & CENTER_VERTICAL
+* GRID 			
 
 
 Additional Options
@@ -49,7 +53,6 @@ Grouping display objects
 License & Credits
 -----------------
 
-2009-10 Cássio S. Antonio
-Based on the work by Igor Almeida (http://www.ialmeida.com) and Pedro Moraes (http://pedromoraes.net)
+2009-10 Cássio S. Antonio, based on the work by Igor Almeida (http://www.ialmeida.com) and Pedro Moraes (http://pedromoraes.net)
 
 AS3 Layout Manager is released under the Open Source MIT license, which gives you the possibility to use it and modify it in every circumstance.
