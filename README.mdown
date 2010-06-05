@@ -12,32 +12,44 @@ Use the place method with an <code>Align</code> and <code>arr</code> parameters.
 Usage
 -----
 
-The arr parameter define the list of objects to arrange. The first object in the Array will be used as reference to align all other objects.
+When using a LayoutManager instance (or it's "place" static instance), you must provide the alignment options and an array with the list of display objects to align/distribute. The first object in the Array will be used as reference to align all other objects.
 
-Basic usage (Using the place global function, wich acts as an static instance of LayoutManager):
+Basic usage (Using the "place" global function, which acts as an static instance of LayoutManager):
 	var sp1 :Sprite = new Sprite()
 	var sp2 :Sprite = new Sprite()
 	addChild(sp1)
 	addChild(sp2)
 
-	place(Align.DISTRIBUTE_RIGHT,[sp1, sp2]) // will put sp2 by the right side of sp1 using the sp1.x + sp1.width as reference..
-
-Example: Using more than one Alignment property at once:
-	place(Align.BOTTOM + Align.DISTRIBUTE_RIGHT,[sp1, sp2]) // will put sp2 aligned by base and to the right side of sp1.
+	place(Align.DISTRIBUTE_RIGHT,[sp1, sp2]) 
+	// will place sp2 by the right side of sp1 using the sp1.x + sp1.width as reference..
 
 
-Example: Grouping objects
-	place(Align.DISTRIBUTE_RIGHT,[sp1, [sp2, sp3]]) // Will place sp2 and sp3 together to the right of sp1, but won't change sp3 position to the right side of sp2.
+You can use also a Stage instance as a reference:
+	place(Align.CENTER,[stage, sp])
+	// will put the sp in the center of the stage. Be careful with object with read only properties.
 
 
-Example: You can use also a Stage instance as a reference:
-	place(Align.CENTER,[stage, sp]) // will put the sp in the center of the stage. Be careful with object with read only properties.
+Available alignment and distribution options are:
+DISTRIBUTE_RIGHT, DISTRIBUTE_LEFT, DISTRIBUTE_UP, DISTRIBUTE_DOWN, RIGHT, LEFT, TOP, BOTTOM, CENTER, CENTER_HORIZONTAL, CENTER_VERTICAL and GRID 			
 
+
+Additional Options
+------------------
+
+Using more than one Alignment property at once:
+	place(Align.BOTTOM | Align.DISTRIBUTE_RIGHT,[sp1, sp2])
+	// will put sp2 aligned by base and to the right side of sp1.
+
+
+Grouping display objects
+	place(Align.DISTRIBUTE_RIGHT,[sp1, [sp2, sp3]])
+	// Will place sp2 and sp3 together to the right of sp1, but won't change sp3 position to the right side of sp2.
 
 		 
-License
--------
+License & Credits
+-----------------
 
+2009-10 Cássio S. Antonio
 Based on the work by Igor Almeida (http://www.ialmeida.com) and Pedro Moraes (http://pedromoraes.net)
 
 AS3 Layout Manager is released under the Open Source MIT license, which gives you the possibility to use it and modify it in every circumstance.
